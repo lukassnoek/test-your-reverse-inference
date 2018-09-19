@@ -1,0 +1,168 @@
+<?xml version="1.0" ?>
+<PsychoPy2experiment encoding="utf-8" version="1.90.2">
+  <Settings>
+    <Param name="expName" updates="None" val="main" valType="str"/>
+    <Param name="Show info dlg" updates="None" val="True" valType="bool"/>
+    <Param name="Enable Escape" updates="None" val="True" valType="bool"/>
+    <Param name="Experiment info" updates="None" val="{'participant': '', 'session': '001'}" valType="code"/>
+    <Param name="Use version" updates="None" val="" valType="str"/>
+    <Param name="Full-screen window" updates="None" val="True" valType="bool"/>
+    <Param name="Window size (pixels)" updates="None" val="[1920, 1080]" valType="code"/>
+    <Param name="Screen" updates="None" val="1" valType="num"/>
+    <Param name="Monitor" updates="None" val="UVA" valType="str"/>
+    <Param name="color" updates="None" val="$[-1,-1,-1]" valType="str"/>
+    <Param name="colorSpace" updates="None" val="rgb" valType="str"/>
+    <Param name="Units" updates="None" val="deg" valType="str"/>
+    <Param name="blendMode" updates="None" val="avg" valType="str"/>
+    <Param name="Show mouse" updates="None" val="False" valType="bool"/>
+    <Param name="Data filename" updates="None" val="u'logs/%s_events.csv' % expInfo['participant']" valType="code"/>
+    <Param name="Save log file" updates="None" val="True" valType="bool"/>
+    <Param name="Save wide csv file" updates="None" val="True" valType="bool"/>
+    <Param name="Save csv file" updates="None" val="False" valType="bool"/>
+    <Param name="Save excel file" updates="None" val="False" valType="bool"/>
+    <Param name="Save psydat file" updates="None" val="True" valType="bool"/>
+    <Param name="logging level" updates="None" val="exp" valType="code"/>
+    <Param name="OSF Project ID" updates="None" val="" valType="str"/>
+    <Param name="HTML path" updates="None" val="html" valType="str"/>
+    <Param name="JS libs" updates="None" val="packaged" valType="str"/>
+  </Settings>
+  <Routines>
+    <Routine name="welcome">
+      <TextComponent name="welcome_txt">
+        <Param name="name" updates="None" val="welcome_txt" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="text" updates="constant" val="Welcome!" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.5" valType="code"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+      </TextComponent>
+      <KeyboardComponent name="welcome_resp">
+        <Param name="name" updates="None" val="welcome_resp" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="allowedKeys" updates="constant" val="" valType="code"/>
+        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
+        <Param name="store" updates="constant" val="nothing" valType="str"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
+        <Param name="correctAns" updates="constant" val="" valType="str"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+    </Routine>
+    <Routine name="show_img">
+      <CodeComponent name="code">
+        <Param name="name" updates="None" val="code" valType="code"/>
+        <Param name="Begin Experiment" updates="constant" val="nr_correct = 0" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="if choice.getRating() == correct_resp:&amp;#10;    nr_correct += 1" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+      </CodeComponent>
+      <ImageComponent name="img">
+        <Param name="name" updates="None" val="img" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="color" updates="constant" val="$[1,1,1]" valType="str"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="pos" updates="constant" val="(0, 1.5)" valType="code"/>
+        <Param name="size" updates="constant" val="(10, 6.5)" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="image" updates="set every repeat" val="$contrast_img" valType="str"/>
+        <Param name="mask" updates="constant" val="None" valType="str"/>
+        <Param name="texture resolution" updates="constant" val="128" valType="code"/>
+        <Param name="interpolate" updates="constant" val="linear" valType="str"/>
+        <Param name="flipVert" updates="constant" val="False" valType="bool"/>
+        <Param name="flipHoriz" updates="constant" val="False" valType="bool"/>
+      </ImageComponent>
+      <RatingScaleComponent name="choice">
+        <Param name="name" updates="None" val="choice" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="stopType" updates="None" val="condition" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="visualAnalogScale" updates="constant" val="False" valType="bool"/>
+        <Param name="categoryChoices" updates="constant" val="WM, Neg-scene, faces, conflict" valType="str"/>
+        <Param name="scaleDescription" updates="constant" val="Which contrast?" valType="str"/>
+        <Param name="low" updates="constant" val="" valType="code"/>
+        <Param name="high" updates="constant" val="" valType="code"/>
+        <Param name="labels" updates="constant" val="" valType="str"/>
+        <Param name="marker" updates="constant" val="triangle" valType="str"/>
+        <Param name="markerStart" updates="constant" val="" valType="str"/>
+        <Param name="singleClick" updates="constant" val="True" valType="bool"/>
+        <Param name="disappear" updates="constant" val="False" valType="bool"/>
+        <Param name="showAccept" updates="constant" val="False" valType="bool"/>
+        <Param name="storeRating" updates="constant" val="True" valType="bool"/>
+        <Param name="storeRatingTime" updates="constant" val="False" valType="bool"/>
+        <Param name="storeHistory" updates="constant" val="False" valType="bool"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="size" updates="constant" val="1.5" valType="code"/>
+        <Param name="tickHeight" updates="constant" val="" valType="str"/>
+        <Param name="pos" updates="constant" val="0, -0.6" valType="str"/>
+        <Param name="customize_everything" updates="constant" val="" valType="str"/>
+      </RatingScaleComponent>
+    </Routine>
+    <Routine name="end">
+      <TextComponent name="end_txt">
+        <Param name="name" updates="None" val="end_txt" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="text" updates="set every repeat" val="&quot;&quot;&quot; You had %i / 40 correct! &quot;&quot;&quot; % $nr_correct" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.6" valType="code"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+      </TextComponent>
+    </Routine>
+  </Routines>
+  <Flow>
+    <Routine name="welcome"/>
+    <LoopInitiator loopType="TrialHandler" name="img_loop">
+      <Param name="name" updates="None" val="img_loop" valType="code"/>
+      <Param name="nReps" updates="None" val="1" valType="code"/>
+      <Param name="conditions" updates="None" val="[OrderedDict([('contrast_img', 'stims/anticipation/rendered_thresh_zstat6_sub-0015.png'), ('correct_resp', 'Neg-scene')]), OrderedDict([('contrast_img', 'stims/anticipation/rendered_thresh_zstat6_sub-0019.png'), ('correct_resp', 'Neg-scene')]), OrderedDict([('contrast_img', 'stims/anticipation/rendered_thresh_zstat6_sub-0023.png'), ('correct_resp', 'Neg-scene')]), OrderedDict([('contrast_img', 'stims/anticipation/rendered_thresh_zstat6_sub-0025.png'), ('correct_resp', 'Neg-scene')]), OrderedDict([('contrast_img', 'stims/anticipation/rendered_thresh_zstat6_sub-0026.png'), ('correct_resp', 'Neg-scene')]), OrderedDict([('contrast_img', 'stims/anticipation/rendered_thresh_zstat6_sub-0028.png'), ('correct_resp', 'Neg-scene')]), OrderedDict([('contrast_img', 'stims/anticipation/rendered_thresh_zstat6_sub-0029.png'), ('correct_resp', 'Neg-scene')]), OrderedDict([('contrast_img', 'stims/anticipation/rendered_thresh_zstat6_sub-0042.png'), ('correct_resp', 'Neg-scene')]), OrderedDict([('contrast_img', 'stims/anticipation/rendered_thresh_zstat6_sub-0075.png'), ('correct_resp', 'Neg-scene')]), OrderedDict([('contrast_img', 'stims/anticipation/rendered_thresh_zstat6_sub-0077.png'), ('correct_resp', 'Neg-scene')]), OrderedDict([('contrast_img', 'stims/gstroop/rendered_thresh_zstat3_sub-0013.png'), ('correct_resp', 'conflict')]), OrderedDict([('contrast_img', 'stims/gstroop/rendered_thresh_zstat3_sub-0018.png'), ('correct_resp', 'conflict')]), OrderedDict([('contrast_img', 'stims/gstroop/rendered_thresh_zstat3_sub-0032.png'), ('correct_resp', 'conflict')]), OrderedDict([('contrast_img', 'stims/gstroop/rendered_thresh_zstat3_sub-0051.png'), ('correct_resp', 'conflict')]), OrderedDict([('contrast_img', 'stims/gstroop/rendered_thresh_zstat3_sub-0054.png'), ('correct_resp', 'conflict')]), OrderedDict([('contrast_img', 'stims/gstroop/rendered_thresh_zstat3_sub-0057.png'), ('correct_resp', 'conflict')]), OrderedDict([('contrast_img', 'stims/gstroop/rendered_thresh_zstat3_sub-0065.png'), ('correct_resp', 'conflict')]), OrderedDict([('contrast_img', 'stims/gstroop/rendered_thresh_zstat3_sub-0082.png'), ('correct_resp', 'conflict')]), OrderedDict([('contrast_img', 'stims/gstroop/rendered_thresh_zstat3_sub-0091.png'), ('correct_resp', 'conflict')]), OrderedDict([('contrast_img', 'stims/gstroop/rendered_thresh_zstat3_sub-0092.png'), ('correct_resp', 'conflict')]), OrderedDict([('contrast_img', 'stims/harriri/rendered_thresh_zstat3_sub-0024.png'), ('correct_resp', 'faces')]), OrderedDict([('contrast_img', 'stims/harriri/rendered_thresh_zstat3_sub-0038.png'), ('correct_resp', 'faces')]), OrderedDict([('contrast_img', 'stims/harriri/rendered_thresh_zstat3_sub-0042.png'), ('correct_resp', 'faces')]), OrderedDict([('contrast_img', 'stims/harriri/rendered_thresh_zstat3_sub-0046.png'), ('correct_resp', 'faces')]), OrderedDict([('contrast_img', 'stims/harriri/rendered_thresh_zstat3_sub-0063.png'), ('correct_resp', 'faces')]), OrderedDict([('contrast_img', 'stims/harriri/rendered_thresh_zstat3_sub-0065.png'), ('correct_resp', 'faces')]), OrderedDict([('contrast_img', 'stims/harriri/rendered_thresh_zstat3_sub-0070.png'), ('correct_resp', 'faces')]), OrderedDict([('contrast_img', 'stims/harriri/rendered_thresh_zstat3_sub-0075.png'), ('correct_resp', 'faces')]), OrderedDict([('contrast_img', 'stims/harriri/rendered_thresh_zstat3_sub-0083.png'), ('correct_resp', 'faces')]), OrderedDict([('contrast_img', 'stims/harriri/rendered_thresh_zstat3_sub-0090.png'), ('correct_resp', 'faces')]), OrderedDict([('contrast_img', 'stims/workingmemory/rendered_thresh_zstat3_sub-0013.png'), ('correct_resp', 'WM')]), OrderedDict([('contrast_img', 'stims/workingmemory/rendered_thresh_zstat3_sub-0015.png'), ('correct_resp', 'WM')]), OrderedDict([('contrast_img', 'stims/workingmemory/rendered_thresh_zstat3_sub-0022.png'), ('correct_resp', 'WM')]), OrderedDict([('contrast_img', 'stims/workingmemory/rendered_thresh_zstat3_sub-0024.png'), ('correct_resp', 'WM')]), OrderedDict([('contrast_img', 'stims/workingmemory/rendered_thresh_zstat3_sub-0026.png'), ('correct_resp', 'WM')]), OrderedDict([('contrast_img', 'stims/workingmemory/rendered_thresh_zstat3_sub-0039.png'), ('correct_resp', 'WM')]), OrderedDict([('contrast_img', 'stims/workingmemory/rendered_thresh_zstat3_sub-0050.png'), ('correct_resp', 'WM')]), OrderedDict([('contrast_img', 'stims/workingmemory/rendered_thresh_zstat3_sub-0055.png'), ('correct_resp', 'WM')]), OrderedDict([('contrast_img', 'stims/workingmemory/rendered_thresh_zstat3_sub-0057.png'), ('correct_resp', 'WM')]), OrderedDict([('contrast_img', 'stims/workingmemory/rendered_thresh_zstat3_sub-0060.png'), ('correct_resp', 'WM')])]" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="stims.csv" valType="str"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
+      <Param name="Selected rows" updates="None" val="" valType="str"/>
+      <Param name="loopType" updates="None" val="random" valType="str"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+      <Param name="isTrials" updates="None" val="True" valType="bool"/>
+    </LoopInitiator>
+    <Routine name="show_img"/>
+    <LoopTerminator name="img_loop"/>
+    <Routine name="end"/>
+  </Flow>
+</PsychoPy2experiment>
