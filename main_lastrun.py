@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy2 Experiment Builder (v1.90.2),
-    on Wed 19 Sep 2018 11:29:41 AM CEST
+    on Wed 19 Sep 2018 03:15:10 PM CEST
 If you publish work using this script please cite the PsychoPy publications:
     Peirce, JW (2007) PsychoPy - Psychophysics software in Python.
         Journal of Neuroscience Methods, 162(1-2), 8-13.
@@ -27,7 +27,7 @@ os.chdir(_thisDir)
 
 # Store info about the experiment session
 expName = 'main'  # from the Builder filename that created this script
-expInfo = {'participant': '', 'session': '001'}
+expInfo = {'participant_name': ''}
 dlg = gui.DlgFromDict(dictionary=expInfo, title=expName)
 if dlg.OK == False:
     core.quit()  # user pressed cancel
@@ -35,7 +35,7 @@ expInfo['date'] = data.getDateStr()  # add a simple timestamp
 expInfo['expName'] = expName
 
 # Data file name stem = absolute path + name; later add .psyexp, .csv, .log, etc
-filename = _thisDir + os.sep + u'logs/%s_events.csv' % expInfo['participant']
+filename = _thisDir + os.sep + u'logs/%s_events.csv' % expInfo['participant_name']
 
 # An ExperimentHandler isn't essential but helps with data saving
 thisExp = data.ExperimentHandler(name=expName, version='',
@@ -68,7 +68,25 @@ else:
 # Initialize components for Routine "welcome"
 welcomeClock = core.Clock()
 welcome_txt = visual.TextStim(win=win, name='welcome_txt',
-    text='Welcome!',
+    text='Welcome to the "test your reverse inference" challenge!\n\nHow accurate are you at interpreting pretty brain images?\nAnd are you better than my decoder?\n\n(Press any key to continue.)',
+    font='Arial',
+    pos=(0, 0), height=0.5, wrapWidth=None, ori=0, 
+    color='white', colorSpace='rgb', opacity=1,
+    depth=0.0);
+
+# Initialize components for Routine "welcome_2"
+welcome_2Clock = core.Clock()
+welcome_txt_2 = visual.TextStim(win=win, name='welcome_txt_2',
+    text='You\'re going to see brain images ("contrast maps") from different tasks (specific contrast in parentheses):\n\n1. A conflict task (incongruent stimuli > congruent stimuli)\n2. A working memory task (high WM > low WM)\n3. A task with faces (faces > scrambled)\n4. A task with (emotional) scenes (negative scene > neutral scene)\n\n(Press any key to continue.)',
+    font='Arial',
+    pos=(0, 0), height=0.5, wrapWidth=None, ori=0, 
+    color='white', colorSpace='rgb', opacity=1,
+    depth=0.0);
+
+# Initialize components for Routine "welcome_3"
+welcome_3Clock = core.Clock()
+welcome_txt_3 = visual.TextStim(win=win, name='welcome_txt_3',
+    text='For every brain image, you have to guess which task this particular subject was doing.\nYou do this by clicking the option with the mouse.\n\nThere are 40 trials, with 10 trials of each task (WM, conflict, faces, negative scenes).\nGood luck!\n\n(Press any key to start.)',
     font='Arial',
     pos=(0, 0), height=0.5, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1,
@@ -88,12 +106,23 @@ choice = visual.RatingScale(win=win, name='choice', marker='triangle', size=1.5,
 
 # Initialize components for Routine "end"
 endClock = core.Clock()
+your_score = 0
 end_txt = visual.TextStim(win=win, name='end_txt',
     text='default text',
     font='Arial',
     pos=(0, 0), height=0.6, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1,
-    depth=0.0);
+    depth=-1.0);
+
+# Initialize components for Routine "score_overview"
+score_overviewClock = core.Clock()
+
+score_overview_txt = visual.TextStim(win=win, name='score_overview_txt',
+    text='default text',
+    font='Arial',
+    pos=(0, 0), height=0.5, wrapWidth=None, ori=0, 
+    color='white', colorSpace='rgb', opacity=1,
+    depth=-1.0);
 
 # Create some handy timers
 globalClock = core.Clock()  # to track the time since experiment started
@@ -168,10 +197,148 @@ for thisComponent in welcomeComponents:
 # the Routine "welcome" was not non-slip safe, so reset the non-slip timer
 routineTimer.reset()
 
+# ------Prepare to start Routine "welcome_2"-------
+t = 0
+welcome_2Clock.reset()  # clock
+frameN = -1
+continueRoutine = True
+# update component parameters for each repeat
+welcome_resp_2 = event.BuilderKeyResponse()
+# keep track of which components have finished
+welcome_2Components = [welcome_txt_2, welcome_resp_2]
+for thisComponent in welcome_2Components:
+    if hasattr(thisComponent, 'status'):
+        thisComponent.status = NOT_STARTED
+
+# -------Start Routine "welcome_2"-------
+while continueRoutine:
+    # get current time
+    t = welcome_2Clock.getTime()
+    frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+    # update/draw components on each frame
+    
+    # *welcome_txt_2* updates
+    if t >= 0.0 and welcome_txt_2.status == NOT_STARTED:
+        # keep track of start time/frame for later
+        welcome_txt_2.tStart = t
+        welcome_txt_2.frameNStart = frameN  # exact frame index
+        welcome_txt_2.setAutoDraw(True)
+    
+    # *welcome_resp_2* updates
+    if t >= 0.0 and welcome_resp_2.status == NOT_STARTED:
+        # keep track of start time/frame for later
+        welcome_resp_2.tStart = t
+        welcome_resp_2.frameNStart = frameN  # exact frame index
+        welcome_resp_2.status = STARTED
+        # keyboard checking is just starting
+        event.clearEvents(eventType='keyboard')
+    if welcome_resp_2.status == STARTED:
+        theseKeys = event.getKeys()
+        
+        # check for quit:
+        if "escape" in theseKeys:
+            endExpNow = True
+        if len(theseKeys) > 0:  # at least one key was pressed
+            # a response ends the routine
+            continueRoutine = False
+    
+    # check if all components have finished
+    if not continueRoutine:  # a component has requested a forced-end of Routine
+        break
+    continueRoutine = False  # will revert to True if at least one component still running
+    for thisComponent in welcome_2Components:
+        if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+            continueRoutine = True
+            break  # at least one component has not yet finished
+    
+    # check for quit (the Esc key)
+    if endExpNow or event.getKeys(keyList=["escape"]):
+        core.quit()
+    
+    # refresh the screen
+    if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+        win.flip()
+
+# -------Ending Routine "welcome_2"-------
+for thisComponent in welcome_2Components:
+    if hasattr(thisComponent, "setAutoDraw"):
+        thisComponent.setAutoDraw(False)
+# the Routine "welcome_2" was not non-slip safe, so reset the non-slip timer
+routineTimer.reset()
+
+# ------Prepare to start Routine "welcome_3"-------
+t = 0
+welcome_3Clock.reset()  # clock
+frameN = -1
+continueRoutine = True
+# update component parameters for each repeat
+welcome_resp_3 = event.BuilderKeyResponse()
+# keep track of which components have finished
+welcome_3Components = [welcome_txt_3, welcome_resp_3]
+for thisComponent in welcome_3Components:
+    if hasattr(thisComponent, 'status'):
+        thisComponent.status = NOT_STARTED
+
+# -------Start Routine "welcome_3"-------
+while continueRoutine:
+    # get current time
+    t = welcome_3Clock.getTime()
+    frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+    # update/draw components on each frame
+    
+    # *welcome_txt_3* updates
+    if t >= 0.0 and welcome_txt_3.status == NOT_STARTED:
+        # keep track of start time/frame for later
+        welcome_txt_3.tStart = t
+        welcome_txt_3.frameNStart = frameN  # exact frame index
+        welcome_txt_3.setAutoDraw(True)
+    
+    # *welcome_resp_3* updates
+    if t >= 0.0 and welcome_resp_3.status == NOT_STARTED:
+        # keep track of start time/frame for later
+        welcome_resp_3.tStart = t
+        welcome_resp_3.frameNStart = frameN  # exact frame index
+        welcome_resp_3.status = STARTED
+        # keyboard checking is just starting
+        event.clearEvents(eventType='keyboard')
+    if welcome_resp_3.status == STARTED:
+        theseKeys = event.getKeys()
+        
+        # check for quit:
+        if "escape" in theseKeys:
+            endExpNow = True
+        if len(theseKeys) > 0:  # at least one key was pressed
+            # a response ends the routine
+            continueRoutine = False
+    
+    # check if all components have finished
+    if not continueRoutine:  # a component has requested a forced-end of Routine
+        break
+    continueRoutine = False  # will revert to True if at least one component still running
+    for thisComponent in welcome_3Components:
+        if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+            continueRoutine = True
+            break  # at least one component has not yet finished
+    
+    # check for quit (the Esc key)
+    if endExpNow or event.getKeys(keyList=["escape"]):
+        core.quit()
+    
+    # refresh the screen
+    if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+        win.flip()
+
+# -------Ending Routine "welcome_3"-------
+for thisComponent in welcome_3Components:
+    if hasattr(thisComponent, "setAutoDraw"):
+        thisComponent.setAutoDraw(False)
+# the Routine "welcome_3" was not non-slip safe, so reset the non-slip timer
+routineTimer.reset()
+
 # set up handler to look after randomisation of conditions etc
 img_loop = data.TrialHandler(nReps=1, method='random', 
     extraInfo=expInfo, originPath=-1,
-    trialList=data.importConditions('stims.csv'),
+    trialList=data.importConditions('stims.csv', selection='0:3'),
     seed=None, name='img_loop')
 thisExp.addLoop(img_loop)  # add the loop to the experiment
 thisImg_loop = img_loop.trialList[0]  # so we can initialise stimuli with some values
@@ -262,9 +429,21 @@ endClock.reset()  # clock
 frameN = -1
 continueRoutine = True
 # update component parameters for each repeat
-end_txt.setText(""" You had %i / 40 correct! """ % nr_correct)
+import pandas as pd
+your_score = 100*(nr_correct / 40)
+df = pd.read_csv('scores.csv')
+to_append = pd.DataFrame({'participant_name': expInfo['participant_name'], 'score': your_score}, index=[df.size])
+df = df.append(to_append)
+df = df.sort_values(by='score', ascending=False)
+print_string = df.to_string(index=False)
+df.to_csv('scores.csv', index=False)
+end_txt.setText(""" You had %i / 40 correct! (%.2f%%)
+
+(Press any button to see the highscores!)
+""" % (nr_correct, your_score))
+go_to_score = event.BuilderKeyResponse()
 # keep track of which components have finished
-endComponents = [end_txt]
+endComponents = [end_txt, go_to_score]
 for thisComponent in endComponents:
     if hasattr(thisComponent, 'status'):
         thisComponent.status = NOT_STARTED
@@ -276,12 +455,31 @@ while continueRoutine:
     frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
     # update/draw components on each frame
     
+    
     # *end_txt* updates
     if t >= 0.0 and end_txt.status == NOT_STARTED:
         # keep track of start time/frame for later
         end_txt.tStart = t
         end_txt.frameNStart = frameN  # exact frame index
         end_txt.setAutoDraw(True)
+    
+    # *go_to_score* updates
+    if t >= 0.0 and go_to_score.status == NOT_STARTED:
+        # keep track of start time/frame for later
+        go_to_score.tStart = t
+        go_to_score.frameNStart = frameN  # exact frame index
+        go_to_score.status = STARTED
+        # keyboard checking is just starting
+        event.clearEvents(eventType='keyboard')
+    if go_to_score.status == STARTED:
+        theseKeys = event.getKeys()
+        
+        # check for quit:
+        if "escape" in theseKeys:
+            endExpNow = True
+        if len(theseKeys) > 0:  # at least one key was pressed
+            # a response ends the routine
+            continueRoutine = False
     
     # check if all components have finished
     if not continueRoutine:  # a component has requested a forced-end of Routine
@@ -304,8 +502,84 @@ while continueRoutine:
 for thisComponent in endComponents:
     if hasattr(thisComponent, "setAutoDraw"):
         thisComponent.setAutoDraw(False)
+
 # the Routine "end" was not non-slip safe, so reset the non-slip timer
 routineTimer.reset()
+
+# ------Prepare to start Routine "score_overview"-------
+t = 0
+score_overviewClock.reset()  # clock
+frameN = -1
+continueRoutine = True
+# update component parameters for each repeat
+score_overview_txt.alignHoriz = 'center'
+score_overview_txt.setText(print_string)
+end_resp = event.BuilderKeyResponse()
+# keep track of which components have finished
+score_overviewComponents = [score_overview_txt, end_resp]
+for thisComponent in score_overviewComponents:
+    if hasattr(thisComponent, 'status'):
+        thisComponent.status = NOT_STARTED
+
+# -------Start Routine "score_overview"-------
+while continueRoutine:
+    # get current time
+    t = score_overviewClock.getTime()
+    frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+    # update/draw components on each frame
+    
+    
+    # *score_overview_txt* updates
+    if t >= 0.0 and score_overview_txt.status == NOT_STARTED:
+        # keep track of start time/frame for later
+        score_overview_txt.tStart = t
+        score_overview_txt.frameNStart = frameN  # exact frame index
+        score_overview_txt.setAutoDraw(True)
+    
+    # *end_resp* updates
+    if t >= 0.0 and end_resp.status == NOT_STARTED:
+        # keep track of start time/frame for later
+        end_resp.tStart = t
+        end_resp.frameNStart = frameN  # exact frame index
+        end_resp.status = STARTED
+        # keyboard checking is just starting
+        event.clearEvents(eventType='keyboard')
+    if end_resp.status == STARTED:
+        theseKeys = event.getKeys()
+        
+        # check for quit:
+        if "escape" in theseKeys:
+            endExpNow = True
+        if len(theseKeys) > 0:  # at least one key was pressed
+            # a response ends the routine
+            continueRoutine = False
+    
+    # check if all components have finished
+    if not continueRoutine:  # a component has requested a forced-end of Routine
+        break
+    continueRoutine = False  # will revert to True if at least one component still running
+    for thisComponent in score_overviewComponents:
+        if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+            continueRoutine = True
+            break  # at least one component has not yet finished
+    
+    # check for quit (the Esc key)
+    if endExpNow or event.getKeys(keyList=["escape"]):
+        core.quit()
+    
+    # refresh the screen
+    if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+        win.flip()
+
+# -------Ending Routine "score_overview"-------
+for thisComponent in score_overviewComponents:
+    if hasattr(thisComponent, "setAutoDraw"):
+        thisComponent.setAutoDraw(False)
+
+# the Routine "score_overview" was not non-slip safe, so reset the non-slip timer
+routineTimer.reset()
+
+
 
 # these shouldn't be strictly necessary (should auto-save)
 thisExp.saveAsWideText(filename+'.csv')
