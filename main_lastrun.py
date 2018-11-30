@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy2 Experiment Builder (v1.90.2),
-    on Wed 19 Sep 2018 03:15:10 PM CEST
+    on Thu 27 Sep 2018 05:28:21 PM CEST
 If you publish work using this script please cite the PsychoPy publications:
     Peirce, JW (2007) PsychoPy - Psychophysics software in Python.
         Journal of Neuroscience Methods, 162(1-2), 8-13.
@@ -41,10 +41,8 @@ filename = _thisDir + os.sep + u'logs/%s_events.csv' % expInfo['participant_name
 thisExp = data.ExperimentHandler(name=expName, version='',
     extraInfo=expInfo, runtimeInfo=None,
     originPath='/media/lukas/goliath/test-your-reverse-inference/main.psyexp',
-    savePickle=True, saveWideText=True,
+    savePickle=True, saveWideText=False,
     dataFileName=filename)
-# save a log file for detail verbose info
-logFile = logging.LogFile(filename+'.log', level=logging.EXP)
 logging.console.setLevel(logging.WARNING)  # this outputs to the screen, not a file
 
 endExpNow = False  # flag for 'escape' or other condition => quit the exp
@@ -338,7 +336,7 @@ routineTimer.reset()
 # set up handler to look after randomisation of conditions etc
 img_loop = data.TrialHandler(nReps=1, method='random', 
     extraInfo=expInfo, originPath=-1,
-    trialList=data.importConditions('stims.csv', selection='0:3'),
+    trialList=data.importConditions('stims.csv'),
     seed=None, name='img_loop')
 thisExp.addLoop(img_loop)  # add the loop to the experiment
 thisImg_loop = img_loop.trialList[0]  # so we can initialise stimuli with some values
@@ -582,9 +580,7 @@ routineTimer.reset()
 
 
 # these shouldn't be strictly necessary (should auto-save)
-thisExp.saveAsWideText(filename+'.csv')
 thisExp.saveAsPickle(filename)
-logging.flush()
 # make sure everything is closed down
 thisExp.abort()  # or data files will save again on exit
 win.close()
